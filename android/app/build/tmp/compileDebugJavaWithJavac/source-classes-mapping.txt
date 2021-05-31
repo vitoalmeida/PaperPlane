@@ -1,0 +1,15 @@
+com/awesomeexample/BuildConfig.java
+ com.awesomeexample.BuildConfig
+com/awesomeexample/MainActivity.java
+ com.awesomeexample.MainActivity
+ com.awesomeexample.MainActivity$1
+com/awesomeexample/MainApplication.java
+ com.awesomeexample.MainApplication
+ com.awesomeexample.MainApplication$1
+com/awesomeexample/ReactNativeFlipper.java
+ com.awesomeexample.ReactNativeFlipper
+ com.awesomeexample.ReactNativeFlipper$1
+ com.awesomeexample.ReactNativeFlipper$2
+ com.awesomeexample.ReactNativeFlipper$2$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
