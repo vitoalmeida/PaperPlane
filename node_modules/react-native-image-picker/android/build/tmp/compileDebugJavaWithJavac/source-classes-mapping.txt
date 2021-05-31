@@ -1,0 +1,44 @@
+com/imagepicker/ImagePickerModule.java
+ com.imagepicker.ImagePickerModule
+ com.imagepicker.ImagePickerModule$1
+ com.imagepicker.ImagePickerModule$2
+ com.imagepicker.ImagePickerModule$3
+com/imagepicker/utils/UI.java
+ com.imagepicker.utils.UI
+ com.imagepicker.utils.UI$1
+ com.imagepicker.utils.UI$2
+ com.imagepicker.utils.UI$3
+ com.imagepicker.utils.UI$OnAction
+com/imagepicker/utils/ButtonsHelper.java
+ com.imagepicker.utils.ButtonsHelper
+ com.imagepicker.utils.ButtonsHelper$Item
+com/imagepicker/permissions/PermissionUtils.java
+ com.imagepicker.permissions.PermissionUtils
+ com.imagepicker.permissions.PermissionUtils$1
+ com.imagepicker.permissions.PermissionUtils$2
+ com.imagepicker.permissions.PermissionUtils$OnExplainingPermissionCallback
+com/imagepicker/permissions/OnImagePickerPermissionsCallback.java
+ com.imagepicker.permissions.OnImagePickerPermissionsCallback
+com/imagepicker/ResponseHelper.java
+ com.imagepicker.ResponseHelper
+com/imagepicker/permissions/PermissionsHelper.java
+ com.imagepicker.permissions.PermissionsHelper
+com/imagepicker/utils/MediaUtils.java
+ com.imagepicker.utils.MediaUtils
+ com.imagepicker.utils.MediaUtils$1
+ com.imagepicker.utils.MediaUtils$ReadExifResult
+ com.imagepicker.utils.MediaUtils$RolloutPhotoResult
+com/imagepicker/ImagePickerPackage.java
+ com.imagepicker.ImagePickerPackage
+com/imagepicker/BuildConfig.java
+ com.imagepicker.BuildConfig
+com/imagepicker/FileProvider.java
+ com.imagepicker.FileProvider
+com/imagepicker/utils/RealPathUtil.java
+ com.imagepicker.utils.RealPathUtil
+com/imagepicker/utils/ReadableMapUtils.java
+ com.imagepicker.utils.ReadableMapUtils
+com/imagepicker/media/VideoConfig.java
+ com.imagepicker.media.VideoConfig
+com/imagepicker/media/ImageConfig.java
+ com.imagepicker.media.ImageConfig

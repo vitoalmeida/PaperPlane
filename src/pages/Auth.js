@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import {
   View,
   KeyboardAvoidingView,
@@ -17,125 +17,126 @@ import {
 
 import PassoStack from '../components/PassoStack'
 import backgroundImage from '~/assets/images/LoginPuro.jpg'
+import Tab from '~/navigator/Tab';
 
 export default class Auth extends Component {
-    state ={
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        stageRegister: false,
-        stageLogin: false,
-        stageInit: true,
+  state = {
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    stageRegister: false,
+    stageLogin: false,
+    stageInit: true,
+  }
+
+  signinOrSignup = () => {
+    if (this.state.stageRegister) {
+      Alert.alert('Sucesso!', 'Conta criada com sucesso!')
+    } else {
+      Alert.alert('Sucesso!', 'Login realizado com sucesso!')
     }
+  }
 
-    signinOrSignup = () => {
-        if(this.state.stageRegister) {
-            Alert.alert('Sucesso!', 'Conta criada com sucesso!')
-        } else {
-            Alert.alert('Sucesso!', 'Login realizado com sucesso!')
-        }
-    }
+  render() {
+    return (
+      <ImageBackground source={backgroundImage}
+        style={styles.background}>
 
-    render() {
-        return (
-            <ImageBackground source={backgroundImage}
-                style={styles.background}>
-
-                <KeyboardAvoidingView style={styles.containerInput}>
-                  {/* Tela inicial */}
-                  {this.state.stageInit &&
-                    <TouchableOpacity
-                      onPress ={() => this.setState({ stageRegister: true, stageLogin: true, stageInit: false })}
-                      style={styles.btnRegisterInit}>
-                        <Text style={styles.registerTextInit}>
-                          COMEÇAR
+        <KeyboardAvoidingView style={styles.containerInput}>
+          {/* Tela inicial */}
+          {this.state.stageInit &&
+            <TouchableOpacity
+              onPress={() => this.setState({ stageRegister: true, stageLogin: true, stageInit: false })}
+              style={styles.btnRegisterInit}>
+              <Text style={styles.registerTextInit}>
+                COMEÇAR
                         </Text>
-                      </TouchableOpacity>
-                    }
+            </TouchableOpacity>
+          }
 
-                  {this.state.stageInit &&
-                    <TouchableOpacity
-                      onPress ={() => this.setState({ stageLogin: true, stageInit: false })}
-                      style={styles.btnSubmitInit}>
-                        <Text style={styles.submitText}>
-                          ENTRAR
+          {this.state.stageInit &&
+            <TouchableOpacity
+              onPress={() => this.setState({ stageLogin: true, stageInit: false })}
+              style={styles.btnSubmitInit}>
+              <Text style={styles.submitText}>
+                ENTRAR
                         </Text>
-                    </TouchableOpacity>
-                  }
+            </TouchableOpacity>
+          }
 
-                    {this.state.stageRegister &&
-                      <TextInput style={styles.inputNome}
-                        placeholder="Nome"
-                        autoCorrect={false}
-                        value={this.state.name}
-                        onChangeText={name => this.setState({ name })}
-                    />}
+          {this.state.stageRegister &&
+            <TextInput style={styles.inputNome}
+              placeholder="Nome"
+              autoCorrect={false}
+              value={this.state.name}
+              onChangeText={name => this.setState({ name })}
+            />}
 
-                    {this.state.stageRegister, this.state.stageLogin &&
-                      <TextInput style={styles.input}
-                        placeholder="Email"
-                        autoCorrect={false}
-                        value={this.state.email}
-                        onChangeText={email => this.setState({ email })}
-                    />}
+          {this.state.stageRegister, this.state.stageLogin &&
+            <TextInput style={styles.input}
+              placeholder="Email"
+              autoCorrect={false}
+              value={this.state.email}
+              onChangeText={email => this.setState({ email })}
+            />}
 
-                    {this.state.stageRegister, this.state.stageLogin &&
-                      <TextInput style={styles.input}
-                        secureTextEntry={true}
-                        placeholder="Senha"
-                        autoCorrect={false}
-                        value={this.state.password}
-                        onChangeText={password => this.setState({ password })}
-                    />}
+          {this.state.stageRegister, this.state.stageLogin &&
+            <TextInput style={styles.input}
+              secureTextEntry={true}
+              placeholder="Senha"
+              autoCorrect={false}
+              value={this.state.password}
+              onChangeText={password => this.setState({ password })}
+            />}
 
 
-                    {this.state.stageRegister &&
-                        <TextInput style={styles.input}
-                            secureTextEntry={true}
-                            placeholder="Confirmar Senha"
-                            autoCorrect={false}
-                            value={this.state.confirmPassword}
-                            onChangeText={confirmPassword => this.setState({ confirmPassword })}
-                    />}
+          {this.state.stageRegister &&
+            <TextInput style={styles.input}
+              secureTextEntry={true}
+              placeholder="Confirmar Senha"
+              autoCorrect={false}
+              value={this.state.confirmPassword}
+              onChangeText={confirmPassword => this.setState({ confirmPassword })}
+            />}
 
-                    {this.state.stageRegister, this.state.stageLogin &&
-                        <TouchableOpacity
-                        onPress={this.signinOrSignup}
-                        style={styles.btnSubmit}>
-                        <Text style={styles.registerText}>
-                                {this.state.stageRegister ? 'Cadastrar' : 'Entrar'}
-                            </Text>
-                        </TouchableOpacity>
-                    }
+          {this.state.stageRegister, this.state.stageLogin &&
+            <TouchableOpacity
+              onPress={this.signinOrSignup}
+              style={styles.btnSubmit}>
+              <Text style={styles.registerText}>
+                {this.state.stageRegister ? 'Cadastrar' : 'Entrar'}
+              </Text>
+            </TouchableOpacity>
+          }
 
-                    {this.state.stageRegister, this.state.stageLogin &&
-                      <TouchableOpacity
-                        onPress ={() => this.setState({ stageLogin: true })}
-                        onPress ={() => this.setState({ stageRegister: !this.state.stageRegister })}
-                        style={styles.btnRegister}>
-                      <Text style={styles.registerText}>
-                          {this.state.stageRegister ? 'Já possui conta?' : 'Não possui conta?'}
-                      </Text>
-                    </TouchableOpacity>
-                    }
+          {this.state.stageRegister, this.state.stageLogin &&
+            <TouchableOpacity
+              onPress={() => this.setState({ stageLogin: true })}
+              onPress={() => this.setState({ stageRegister: !this.state.stageRegister })}
+              style={styles.btnRegister}>
+              <Text style={styles.registerText}>
+                {this.state.stageRegister ? 'Já possui conta?' : 'Não possui conta?'}
+              </Text>
+            </TouchableOpacity>
+          }
 
-                </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
 
-            </ImageBackground>
-        )
-    }
+      </ImageBackground>
+    )
+  }
 
 }
 
 const styles = StyleSheet.create({
-  background:{
+  background: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%'
   },
-  containerInput:{
+  containerInput: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -160,7 +161,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     padding: 10,
   },
-  btnSubmitInit:{
+  btnSubmitInit: {
     backgroundColor: '#35AAFF',
     width: '90%',
     height: 45,
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     marginTop: 10
   },
-  btnSubmit:{
+  btnSubmit: {
     backgroundColor: '#35AAFF',
     width: '90%',
     height: 45,
@@ -178,15 +179,15 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     marginTop: 10
   },
-  submitText:{
+  submitText: {
     color: '#FFF',
     fontSize: 18
   },
-  submitTextInit:{
+  submitTextInit: {
     color: '#FFF',
     fontSize: 18
   },
-  btnRegisterInit:{
+  btnRegisterInit: {
     backgroundColor: '#FFF',
     width: '90%',
     height: 45,
@@ -195,7 +196,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     marginTop: 10
   },
-  btnRegister:{
+  btnRegister: {
     width: '90%',
     height: 45,
     alignItems: 'center',
