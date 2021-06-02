@@ -1,6 +1,12 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
+import Header from '~/components/Header'
 
 export default props => (
-  <Text>Mensagens</Text>
+  <View>
+    <Header>
+      <TextInput>Alo</TextInput>
+    </Header>
+    <Text></Text>
+  </View>
 )

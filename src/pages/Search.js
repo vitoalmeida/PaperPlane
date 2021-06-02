@@ -1,6 +1,10 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { View, Text } from 'react-native'
+import Header from '~/components/Header'
 
 export default props => (
-  <Text>Pesquisa</Text>
+  <View>
+    <Header />
+    <Text></Text>
+  </View>
 )

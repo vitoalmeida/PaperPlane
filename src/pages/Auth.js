@@ -42,7 +42,7 @@ export default class Auth extends Component {
     return (
       <ImageBackground source={backgroundImage}
         style={styles.background}>
-
+        <StatusBar barStyle='light-content' backgroundColor='#A1E4FD' />
         <KeyboardAvoidingView style={styles.containerInput}>
           {/* Tela inicial */}
           {this.state.stageInit &&
@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   input: {
+
     backgroundColor: '#FFF',
     width: '90%',
     marginBottom: 15,
