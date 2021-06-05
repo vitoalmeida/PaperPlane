@@ -1,6 +1,18 @@
 // React Imports
-import React, { useState } from 'react';
-import { KeyboardAvoidingView, TextInput, View, Image, Text, ImageBackground, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  KeyboardAvoidingView,
+  Animated,
+  TextInput,
+  View,
+  Image,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+  Keyboard
+} from 'react-native';
 
 // Navigation Imports
 import { NavigationContainer } from '@react-navigation/native';
@@ -40,15 +52,88 @@ function RegisterScreen({ navigation }) {
     })
   }
 
+  const [offset] = useState(new Animated.ValueXY({ x: 0, y: 100 }))
+  const [opacity] = useState(new Animated.Value(0))
+  const [imageOpacity] = useState(new Animated.Value(1))
+  const [imageMove] = useState(new Animated.ValueXY({ x: 0, y: 0 }))
+
+  useEffect(() => {
+    keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', keyboardDidShow)
+    keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', keyboardDidHide)
+
+    Animated.parallel([
+      Animated.spring(offset.y, {
+        toValue: 0,
+        speed: 4,
+        bounciness: 15,
+        useNativeDriver: true
+      }),
+      Animated.timing(opacity, {
+        toValue: 1,
+        duration: 400,
+        useNativeDriver: true
+      }),
+    ]).start()
+  }, [])
+
+  function keyboardDidShow() {
+    Animated.parallel([
+      Animated.timing(imageOpacity, {
+        toValue: 0,
+        duration: 150,
+        useNativeDriver: true
+      }),
+      Animated.spring(imageMove.y, {
+        toValue: -100,
+        speed: 4,
+        useNativeDriver: true
+      }),
+    ]).start()
+  }
+
+  function keyboardDidHide() {
+    Animated.parallel([
+      Animated.timing(imageOpacity, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true
+      }),
+      Animated.spring(imageMove.y, {
+        toValue: 0,
+        speed: 4,
+        useNativeDriver: true
+      })
+    ]).start()
+  }
+
   return (
     <ImageBackground source={backgroundImage}
-      style={styles.backgroundImg}>
+    style={styles.backgroundImg}>
       <StatusBar barStyle='light-content' backgroundColor='white' />
       <KeyboardAvoidingView style={styles.background}>
         <View style={styles.imageContainer}>
-          <Image source={require('~/assets/images/registerAvatar.png')} style={styles.image} />
+          <Animated.Image source={require('~/assets/images/registerAvatar.png')}
+            style={[styles.image,
+            {
+              opacity: imageOpacity,
+              transform: [
+                { translateY: imageMove.y }
+              ]
+            }
+            ]}
+          />
         </View>
-        <View style={styles.inputContainer}>
+        <Animated.View
+          style={[styles.inputContainer,
+          {
+            opacity: opacity,
+            transform: [
+              { translateY: offset.y }
+            ]
+          }
+          ]}
+        >
+
           <TextInput style={styles.input}
             placeholder="Digite seu email"
             autoCorrect={false}
@@ -68,7 +153,7 @@ function RegisterScreen({ navigation }) {
             <Text>CADASTRAR</Text>
           </TouchableOpacity>
 
-        </View>
+        </Animated.View>
 
       </KeyboardAvoidingView>
     </ImageBackground>
@@ -105,17 +190,17 @@ const styles = StyleSheet.create({
   imageContainer: {
     // backgroundColor: 'red',
     flex: 1.5,
+    paddingBottom: 70,
     justifyContent: 'center',
   },
   image: {
     flex: 1,
-    marginBottom: -20,
     resizeMode: 'contain'
   },
   inputContainer: {
     // backgroundColor: 'blue',
     flex: 1,
-    marginTop: 100,
+    marginTop: 0,
     width: '80%',
     justifyContent: 'center',
     alignItems: 'center',
