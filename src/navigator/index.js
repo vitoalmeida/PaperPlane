@@ -15,7 +15,6 @@ const Tab = createBottomTabNavigator();
 
 export default props =>{
   return (
-    <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -47,6 +46,5 @@ export default props =>{
         <Tab.Screen name="Notification" component={Notification} />
         <Tab.Screen name="Message" component={Message} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }

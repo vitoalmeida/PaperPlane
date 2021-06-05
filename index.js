@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 
 import { AppRegistry } from 'react-native';
-import Navegacao from '~/navigator';
+import Stack from '~/pages/Auth';
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => Navegacao);
+AppRegistry.registerComponent(appName, () => Stack);

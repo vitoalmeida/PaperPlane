@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Vito\\Documents\\GitHub\\PaperPlane\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\d14dbad7340cad958a2e361a440b498d\\appcompat-1.1.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\4b5868a218f8e0fe022c3ea45ad9869d\\appcompat-1.1.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,37,41,42,43,44",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\747f53e70e3372703b3570ac3dfbfb03\\material-1.1.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\121c1b7561d49d1b372ceeda497bdd1c\\material-1.1.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\dcc76cd07ebcaa6166d73d461b1667fa\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Vito\\.gradle\\caches\\transforms-2\\files-2.1\\234ce155774c9dd46c75e0ecedccc0da\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

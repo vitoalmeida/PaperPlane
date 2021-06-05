@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">196592173854-gtgl89g607ggfhrlplrimkeg8errb8be.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">196592173854</string>
+    <string name="google_api_key" translatable="false">AIzaSyA6QfQ3bJFmMcXAz11KLRkbdvRDLkJdfSw</string>
+    <string name="google_app_id" translatable="false">1:196592173854:android:b63e540a3a32b4653bbf0f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA6QfQ3bJFmMcXAz11KLRkbdvRDLkJdfSw</string>
+    <string name="google_storage_bucket" translatable="false">paperplane-ad963.appspot.com</string>
+    <string name="project_id" translatable="false">paperplane-ad963</string>
+</resources>

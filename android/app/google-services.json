@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "196592173854",
+    "project_id": "paperplane-ad963",
+    "storage_bucket": "paperplane-ad963.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196592173854:android:b63e540a3a32b4653bbf0f",
+        "android_client_info": {
+          "package_name": "com.awesomeexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196592173854-gtgl89g607ggfhrlplrimkeg8errb8be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6QfQ3bJFmMcXAz11KLRkbdvRDLkJdfSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196592173854-gtgl89g607ggfhrlplrimkeg8errb8be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196592173854:android:a5d67178e0134c273bbf0f",
+        "android_client_info": {
+          "package_name": "com.paperplane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196592173854-gtgl89g607ggfhrlplrimkeg8errb8be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6QfQ3bJFmMcXAz11KLRkbdvRDLkJdfSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196592173854-gtgl89g607ggfhrlplrimkeg8errb8be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
