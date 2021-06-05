@@ -53,10 +53,12 @@ export default props => {
 // Styles
 const styles = StyleSheet.create({
   background: {
+    color: '#91DEFC',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
+    resizeMode: 'cover'
   },
   containerInput: {
     flex: 1,
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 7,
+    borderRadius: 20,
     marginTop: 10
   },
   registerText: {
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 3,
-    borderRadius: 7,
+    borderRadius: 20,
     marginTop: 10
   },
   loginText: {
