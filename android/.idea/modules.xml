@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AwesomeExample.iml" filepath="$PROJECT_DIR$/.idea/modules/AwesomeExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AwesomeExample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AwesomeExample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-3632000/AwesomeExample.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-3632000/AwesomeExample.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/483881210/AwesomeExample.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/483881210/AwesomeExample.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1368490927/AwesomeExample.react-native-firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/1368490927/AwesomeExample.react-native-firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1042464681/AwesomeExample.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1042464681/AwesomeExample.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-967970289/AwesomeExample.react-native-image-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-967970289/AwesomeExample.react-native-image-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1816640667/AwesomeExample.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-1816640667/AwesomeExample.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-429809920/AwesomeExample.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-429809920/AwesomeExample.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1001930984/AwesomeExample.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-1001930984/AwesomeExample.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/657297119/AwesomeExample.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/657297119/AwesomeExample.react-native-vector-icons.iml" />
+    </modules>
+  </component>
+</project>

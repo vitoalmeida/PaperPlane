@@ -9,9 +9,9 @@
                         "startLines": "3",
                         "startColumns": "4",
                         "startOffsets": "57",
-                        "endLines": "6",
+                        "endLines": "7",
                         "endColumns": "12",
-                        "endOffsets": "240"
+                        "endOffsets": "246"
                     },
                     "to": {
                         "startLines": "841",
