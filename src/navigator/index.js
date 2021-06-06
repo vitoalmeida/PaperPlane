@@ -9,6 +9,8 @@ import Notification from '~/pages/Notification'
 import Message from '~/pages/Message'
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import { HeaderBackButton } from 'react-navigation-stack'
+import { StackActions } from 'react-navigation'
 FontAwesome.loadFont();
 
 const Tab = createBottomTabNavigator();

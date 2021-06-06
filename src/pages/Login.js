@@ -1,20 +1,38 @@
 // React Imports
-import React, { useState } from 'react';
-import { KeyboardAvoidingView, TextInput, Button, View, Text, ImageBackground, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  KeyboardAvoidingView,
+  Animated,
+  TextInput,
+  Image,
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  Alert,
+  TouchableOpacity,
+  Keyboard,
+  Button
+} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 // Navigation Imports
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '~/navigator'
 import Sucess from './Sucesso'
 import Falha from './Falha'
+
 // Images Imports
 import backgroundImage from '~/assets/images/loginbckg.jpg'
+import loginAvatar from '~/assets/images/loginAvatar.png'
 
 // Firebase Auth Imports
 import '@react-native-firebase/auth'
 import firebase from '../../firebaseconection'
 
+
+
+// Principal Component
 function Login({ navigation }) {
   function navegarSucess() {
     navigation.navigate('Home')
@@ -38,40 +56,170 @@ function Login({ navigation }) {
     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
       navegarSucess()
     }).catch(() => {
-      navegarFalha()
+      Alert.alert('','Usuário ou senha incorretos, tente novamente!')
     })
   }
+
+  const [inputOpacity] = useState(new Animated.Value(0))
+  const [inputMove] = useState(new Animated.ValueXY({ x: 0, y: 100 }))
+  const [imageOpacity] = useState(new Animated.Value(1))
+  const [imageMove] = useState(new Animated.ValueXY({ x: 0, y: -100 }))
+  const [backgroundOpacity] = useState(new Animated.ValueXY({ x: 0, y: 0 }))
+
+  useEffect(() => {
+    Keyboard.addListener('keyboardDidShow', keyboardDidShow)
+    Keyboard.addListener('keyboardDidHide', keyboardDidHide)
+
+    Animated.parallel([
+      Animated.spring(inputMove.y, {
+        toValue: 0,
+        speed: 4,
+        bounciness: 15,
+        useNativeDriver: true
+      }),
+      Animated.spring(imageMove.y, {
+        toValue: 0,
+        speed: 4,
+        bounciness: 15,
+        useNativeDriver: true
+      }),
+      Animated.timing(inputOpacity, {
+        toValue: 1,
+        duration: 400,
+        useNativeDriver: true
+      }),
+    ]).start()
+  }, [])
+
+  function keyboardDidShow() {
+    Animated.parallel([
+      Animated.timing(imageOpacity, {
+        toValue: 0,
+        duration: 120,
+        useNativeDriver: true
+      }),
+      Animated.spring(imageMove.y, {
+        toValue: -300,
+        speed: 10,
+        useNativeDriver: true
+      }),
+      Animated.spring(inputMove.y, {
+        toValue: -70,
+        bounciness: 12,
+        speed: 2,
+        useNativeDriver: true
+      }),
+      Animated.spring(backgroundOpacity, {
+        toValue: -200,
+        bounciness: 2,
+        speed: 0.5,
+        useNativeDriver: true
+      }),
+    ]).start()
+  }
+
+  function keyboardDidHide() {
+    Animated.parallel([
+      Animated.timing(imageOpacity, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true
+      }),
+      Animated.spring(imageMove.y, {
+        toValue: 0,
+        speed: 4,
+        bounciness: 2,
+        useNativeDriver: true
+      }),
+      Animated.spring(inputMove.y, {
+        toValue: 0,
+        speed: 0,
+        bounciness: 0,
+        useNativeDriver: true
+      }),
+      Animated.spring(backgroundOpacity, {
+        toValue: 0,
+        bounciness: 0,
+        speed: 4,
+        useNativeDriver: true
+      }),
+    ]).start()
+  }
+
   return (
-    <ImageBackground source={backgroundImage}
-      style={styles.background}>
+    <KeyboardAvoidingView enabled={true} style={styles.background}>
+      <Animated.View style={{
+        ...StyleSheet.absoluteFill,
+        transform: [
+          { translateY: backgroundOpacity.y }
+        ]
+      }}>
+        <Image source={backgroundImage} style={{ flex: 1, width: null }} />
+      </Animated.View>
+
       <StatusBar barStyle='light-content' backgroundColor='white' />
-      <KeyboardAvoidingView style={styles.inputContainer}>
-        {/* <Image source={require('~/assets/images/registerAvatar.png')} style={styles.image}/> */}
-        <TextInput style={styles.input}
-          placeholder="Digite seu email"
-          autoCorrect={false}
-          value={email}
-          onChangeText={txtEmail => onChangeEmail(txtEmail)}>
-        </TextInput>
-        <TextInput style={styles.input}
-          secureTextEntry={true}
-          placeholder="Digite sua senha"
-          autoCorrect={false}
-          value={password}
-          onChangeText={txtPassword => onChangePassword(txtPassword)}>
-        </TextInput>
+
+      <Animated.View style={[styles.imageContainer,
+      {
+        opacity: imageOpacity,
+        transform: [
+          { translateY: imageMove.y }
+        ]
+      }
+      ]}>
+        <Animated.Image source={loginAvatar}
+          style={styles.image}
+        />
+      </Animated.View>
+      <Animated.View
+        style={[styles.inputContainer,
+        {
+          opacity: inputOpacity,
+          transform: [
+            { translateY: inputMove.y }
+          ]
+        }
+        ]}
+      >
+
+        <View style={styles.inputBox}>
+          <Icon name='envelope' size={20} style={[styles.inputIcon, { paddingLeft: 16, paddingRight: 12 }]} />
+          <TextInput style={styles.input}
+            placeholder="E-mail"
+            keyboardType="email-address"
+            autoCorrect={false}
+            value={email}
+            onChangeText={txtEmail => onChangeEmail(txtEmail)}>
+          </TextInput>
+        </View>
+
+        <View style={styles.inputBox}>
+          <Icon name='lock' size={20} style={styles.inputIcon} />
+          <TextInput style={styles.input}
+            placeholder="Senha"
+            autoCorrect={false}
+            keyboardType= 'default'
+            value={password}
+            // secureTextEntry={true}
+            onChangeText={txtPassword => onChangePassword(txtPassword)}>
+          </TextInput>
+        </View>
 
         <TouchableOpacity style={styles.loginBtn}
-          title="Entrar"
           onPress={login}>
-          <Text>ENTRAR</Text>
+          <Text style={{ fontFamily: 'AppleTea', fontSize: 18, alignItems: 'center', color: '#444' }}>
+            LOGIN
+            </Text>
         </TouchableOpacity>
 
-      </KeyboardAvoidingView>
-    </ImageBackground>
-  )
+      </Animated.View>
+
+    </KeyboardAvoidingView>
+
+  );
 }
 
+// Navigation Component
 const Stack = createStackNavigator();
 function LoginForm() {
   return (
@@ -85,35 +233,65 @@ function LoginForm() {
   );
 }
 
+export default LoginForm
+
+// Styles
 const styles = StyleSheet.create({
+  backgroundImg: {
+    width: '100%',
+    height: '100%'
+  },
   background: {
-    color: '#91DEFC',
+    backgroundColor: '#59C9FA',
     flex: 1,
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    resizeMode: 'cover'
+  },
+  imageContainer: {
+    // backgroundColor: 'red',
+    flex: 1.5,
+    paddingBottom: 100,
+    justifyContent: 'center',
+  },
+  image: {
+    // flex: 1,
+    resizeMode: 'contain',
+    width: 380
   },
   inputContainer: {
+    //  backgroundColor: 'blue',
     flex: 1,
-    marginTop: 480,
     width: '80%',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
-    flex: 1
+  inputIcon: {
+    color: '#999',
+    paddingLeft: 20,
+    paddingRight: 15,
+    borderRightWidth: 2,
+    borderColor: '#DDD'
   },
   input: {
+    // backgroundColor: 'red',
+    fontFamily: 'MomcakeBold',
+    padding: 10,
+    paddingLeft: 15,
+    color: '#999',
+    fontSize: 20,
+    width: '85%'
+  },
+  inputBox: {
+    alignItems: 'center',
+    flexDirection: 'row',
     backgroundColor: 'white',
     marginBottom: 15,
-    color: '#222',
-    fontSize: 17,
     borderRadius: 25,
     borderTopLeftRadius: 7,
     borderBottomRightRadius: 7,
-    width: '90%',
-    padding: 10
+    width: '100%',
+    height: 50,
   },
   loginBtn: {
     backgroundColor: '#FFF',
@@ -124,8 +302,10 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 7,
     borderBottomRightRadius: 7,
     borderRadius: 20,
-    marginTop: 10
+    marginTop: 10,
+    shadowRadius: 5,
+    shadowOffset: { width: 15, height: 15 },
+    shadowColor: 'black',
+    shadowOpacity: 1
   }
 })
-
-export default LoginForm
