@@ -32,7 +32,6 @@ Paper Plane
 Este projeto é sobre um aplicativo que une estudantes e empresas para formalizar estágios.
 
 A intenção com esta solução é facilitar o processo de seleção de estagiários poupando tempo e dinheiro para as empresas. E também ajudar os estudantes a acharem vagas com mais facilidade.
-<hr>
 
 
 <!-- TECHNOLOGIES -->
@@ -41,7 +40,6 @@ A intenção com esta solução é facilitar o processo de seleção de estagiá
 Abaixo segue o que foi utilizado na criação deste aplicativo:
 
 - ⚛️ [ReactNative](https://reactnative.dev/)
-<hr>
 
 
 <!-- DEMONSTRATION -->
@@ -49,10 +47,9 @@ Abaixo segue o que foi utilizado na criação deste aplicativo:
 ## :alembic: Demonstração
 
 Para ilustrar melhor o projeto, estão abaixo algumas demonstrações.
-<hr>
+
 
 <!-- CONTACT -->
-
 
 ## :speech_balloon: Contato
 
