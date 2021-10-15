@@ -29,7 +29,7 @@ Paper Plane
 
 ## :bulb: Sobre o Projeto
 
-Este projeto é sobre um aplicativo que une estudantes e empresas para formalizar estágios.
+Este projeto trata-se de um aplicativo que une estudantes e empresas, para formalizar estágios.
 
 A intenção com esta solução é facilitar o processo de seleção de estagiários poupando tempo e dinheiro para as empresas. E também ajudar os estudantes a acharem vagas com mais facilidade.
 
@@ -37,7 +37,7 @@ A intenção com esta solução é facilitar o processo de seleção de estagiá
 <!-- TECHNOLOGIES -->
 ## :hammer: Feito Com
 
-Abaixo segue o que foi utilizado na criação deste aplicativo:
+Segue abaixo o que foi utilizado na criação deste aplicativo:
 
 - ⚛️ [ReactNative](https://reactnative.dev/)
 - 🔥 [Firebase](https://firebase.google.com/)
@@ -46,11 +46,11 @@ Abaixo segue o que foi utilizado na criação deste aplicativo:
 
 ## :alembic: Demonstração
 
-Para ilustrar melhor o projeto, estão abaixo algumas demonstrações:
+Para ilustrar melhor o projeto, abaixo estão algumas demonstrações:
 
 ### Tela de cadastro
 
-![Alt Text](https://media.giphy.com/media/yUfO3EORILzS9R5j8x/giphy.gif)
+![Alt Text](https://media.giphy.com/media/bLS6WAHpHKD6ERmsbA/giphy.gif)
 
 
 ### Tela de login
@@ -61,7 +61,7 @@ Para ilustrar melhor o projeto, estão abaixo algumas demonstrações:
 <!-- STOP PROJECT -->
 
 ## :construction: Pausa do Projeto
-O projeto foi suspenso por hora, pois encontrei dificuldades no React Native, e decidi dar um passo para trás, e estudar melhor ReactJS e JavaScript. No futuro pretendo continuar o projeto com certeza!
+O projeto foi suspenso por hora, pois encontrei dificuldades no React Native. Diante tal situação, decidi dar um passo para trás e estudar melhor ReactJS e JavaScript. No futuro pretendo continuar o projeto com certeza!
 
 <!-- CONTACT -->
 ## :speech_balloon: Contato
