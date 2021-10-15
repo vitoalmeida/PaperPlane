@@ -50,7 +50,7 @@ Para ilustrar melhor o projeto, abaixo estão algumas demonstrações:
 
 ### Tela de cadastro
 
-![Alt Text](https://media.giphy.com/media/bLS6WAHpHKD6ERmsbA/giphy.gif)
+![Alt Text](https://media.giphy.com/media/Hfii87HCShbSAgTt18/giphy.gif)
 
 
 ### Tela de login
