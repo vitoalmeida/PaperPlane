@@ -35,22 +35,35 @@ A intenção com esta solução é facilitar o processo de seleção de estagiá
 
 
 <!-- TECHNOLOGIES -->
-## :construction: Feito Com
+## :hammer: Feito Com
 
 Abaixo segue o que foi utilizado na criação deste aplicativo:
 
 - ⚛️ [ReactNative](https://reactnative.dev/)
-
+- 🔥 [Firebase](https://firebase.google.com/)
 
 <!-- DEMONSTRATION -->
 
 ## :alembic: Demonstração
 
-Para ilustrar melhor o projeto, estão abaixo algumas demonstrações.
+Para ilustrar melhor o projeto, estão abaixo algumas demonstrações:
 
+### Tela de cadastro
+
+![Alt Text](https://media.giphy.com/media/yUfO3EORILzS9R5j8x/giphy.gif)
+
+
+### Tela de login
+![Alt Text](https://media.giphy.com/media/JFpUFUX3hdRsMZNvTB/giphy.gif)
+
+### Telas de navegação
+![Alt Text](https://media.giphy.com/media/6Xyz15mnW4fVQGUJ0j/giphy.gif)
+<!-- STOP PROJECT -->
+
+## :construction: Pausa do Projeto
+O projeto foi suspenso por hora, pois encontrei dificuldades no React Native, e decidi dar um passo para trás, e estudar melhor ReactJS e JavaScript. No futuro pretendo continuar o projeto com certeza!
 
 <!-- CONTACT -->
-
 ## :speech_balloon: Contato
 
 🔘 LinkedIn - [Clique Aqui](https://www.linkedin.com/in/vitormachado-code/)
