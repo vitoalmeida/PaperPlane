@@ -45,7 +45,7 @@ Segue abaixo o que foi utilizado na criação deste aplicativo:
 Para ilustrar melhor o projeto, abaixo estão algumas demonstrações:
 
 ### Tela de cadastro
-![Alt Text](https://media.giphy.com/media/Hfii87HCShbSAgTt18/giphy.gif)
+![Alt Text](https://i.giphy.com/media/Hfii87HCShbSAgTt18/giphy.webp)
 
 ### Tela de login
 ![Alt Text](https://media.giphy.com/media/JFpUFUX3hdRsMZNvTB/giphy.gif)
